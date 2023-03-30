@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const { Schema } = mongoose;
+const { Schema, model } = mongoose;
 
 const postSchema = new Schema({
   title: String,
@@ -18,4 +18,6 @@ const postSchema = new Schema({
   },
 });
 
-export default postSchema;
+const PostMessage = model("PostMessage", postSchema);
+
+export default PostMessage;
